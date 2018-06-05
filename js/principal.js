@@ -1,5 +1,45 @@
 atualizarTabelaPacientes();
 
+document.querySelector("#adicionar-paciente").addEventListener("click", function (event) {
+    event.preventDefault();
+    
+    let tabela = document.querySelector("#tabela-pacientes");
+
+    let linhaTabela = document.createElement("tr");
+    linhaTabela.classList.add("paciente");
+    tabela.appendChild(linhaTabela);
+
+    let colunaNome = document.createElement("td");
+    colunaNome.classList.add("info-nome");
+    colunaNome.textContent = document.querySelector("#nome").value;
+    document.querySelector("#nome").value = "";
+    linhaTabela.appendChild(colunaNome);
+
+    let colunaPeso = document.createElement("td");
+    colunaPeso.classList.add("info-peso");
+    colunaPeso.textContent = document.querySelector("#peso").value;
+    document.querySelector("#peso").value = "";
+    linhaTabela.appendChild(colunaPeso);
+
+    let colunaAltura = document.createElement("td");
+    colunaAltura.classList.add("info-altura");
+    colunaAltura.textContent = document.querySelector("#altura").value;
+    document.querySelector("#altura").value = "";
+    linhaTabela.appendChild(colunaAltura);
+
+    let colunaGordura = document.createElement("td");
+    colunaGordura.classList.add("info-gordura");
+    colunaGordura.textContent = document.querySelector("#gordura").value;
+    document.querySelector("#gordura").value = "";
+    linhaTabela.appendChild(colunaGordura);
+
+    let colunaIMC = document.createElement("td");
+    colunaIMC.classList.add("info-imc");
+    linhaTabela.appendChild(colunaIMC);
+
+    atualizarTabelaPacientes();
+});
+
 
 function atualizarTabelaPacientes(){
 
